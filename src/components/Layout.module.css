@@ -1,0 +1,103 @@
+.shell { display: flex; min-height: 100vh; background: var(--bg); color: var(--text); transition: background 0.3s, color 0.3s; }
+.sidebar { width: 260px; background: var(--bg-white); border-right: 1px solid var(--border); padding: 1.5rem 1rem; display: flex; flex-direction: column; position: fixed; top: 0; bottom: 0; z-index: 1000; overflow-y: auto; transition: background 0.3s, border-color 0.3s, left 0.3s ease; }
+[data-theme="dark"] .sidebar { background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(20px); }
+
+.workspaceBox { display: flex; align-items: center; gap: .75rem; padding: .75rem; border: 1px solid var(--border); border-radius: 12px; background: var(--bg); margin-bottom: 1.5rem; cursor: pointer; transition: all 0.2s; }
+.workspaceIcon { width: 32px; height: 32px; background: var(--primary); color: white; border-radius: 8px; display: grid; place-items: center; font-weight: 900; font-size: 1.1rem; }
+.workspaceText { display: flex; flex-direction: column; flex: 1; }
+.workspaceText strong { font-size: .9rem; font-weight: 700; color: var(--text); }
+.workspaceText span { font-size: .75rem; color: var(--text-muted); }
+
+.nav { display: flex; flex-direction: column; gap: .2rem; flex: 1; }
+.sectionTitle { font-size: 0.65rem; font-weight: 800; color: var(--text-light); letter-spacing: 1.5px; margin: 1rem 0 0.3rem 0.8rem; }
+.navItem { display: flex; align-items: center; gap: .8rem; padding: .65rem .8rem; border-radius: 10px; font-size: .9rem; font-weight: 600; color: var(--text-muted); transition: all .2s; text-decoration: none; }
+.navItem:hover { background: var(--primary-light); color: var(--primary); transform: translateX(4px); }
+.active { background: linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%); color: #fff !important; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); }
+
+.userBoxWrapper { position: relative; margin-top: auto; }
+.userBox { display: flex; align-items: center; gap: .75rem; padding: .5rem; border-top: 1px solid var(--border); cursor: pointer; border-radius: 12px; transition: 0.2s; }
+.userBox:hover { background: var(--bg); }
+.avatarImg { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; border: 2px solid var(--primary-light); object-fit: cover; }
+.userInfo { flex: 1; min-width: 0; }
+.userName { font-size: .85rem; font-weight: 700; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.userEmail { font-size: .75rem; color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rotate { transform: rotate(180deg); transition: 0.3s; }
+
+.mainWrapper { flex: 1; margin-left: 260px; display: flex; flex-direction: column; min-height: 100vh; }
+.topHeader { display: flex; justify-content: space-between; align-items: center; padding: 1rem 3rem; background: var(--bg-white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 500; transition: background 0.3s, border-color 0.3s; }
+[data-theme="dark"] .topHeader { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(20px); border-color: rgba(255,255,255,0.05); }
+
+.searchBar { display: flex; align-items: center; gap: .5rem; background: var(--bg); padding: .6rem 1rem; border-radius: 20px; width: 300px; border: 1px solid transparent; transition: all 0.2s; }
+.searchBar:focus-within { background: var(--bg-white); border-color: var(--primary); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+.searchBar input { border: none; background: transparent; outline: none; font-size: .9rem; width: 100%; color: var(--text); }
+
+.headerActions { display: flex; align-items: center; gap: 1rem; }
+.iconBtn { background: var(--bg-white); border: 1px solid var(--border); padding: .6rem; border-radius: 50%; display: flex; cursor: pointer; transition: all 0.2s; }
+.iconBtn:hover { background: var(--bg); color: var(--primary); }
+.createBtn { display: flex; align-items: center; gap: .5rem; background: linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%); color: white; border: none; padding: .6rem 1.2rem; border-radius: 20px; font-weight: 700; font-size: .9rem; cursor: pointer; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3); transition: all 0.2s; }
+.createBtn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5); }
+
+.main { padding: 2.5rem 3rem; flex: 1; }
+
+.fab { position: fixed; bottom: 2rem; right: 2rem; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--primary) 0%, #8b5cf6 100%); color: white; border: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4); cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 100; }
+.fab:hover { transform: scale(1.1) rotate(90deg); box-shadow: 0 15px 35px rgba(99, 102, 241, 0.6); }
+
+/* --- DROPDOWN MENUS STYLES --- */
+.dropdownMenuNotif { position: absolute; top: 50px; right: 0; width: 320px; background: var(--bg-white); border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); z-index: 1000; animation: dropFade 0.2s ease forwards; overflow: hidden; }
+.notifHeader { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); background: var(--bg); }
+.notifHeader strong { font-size: 0.95rem; }
+.badgeCount { background: var(--primary-light); color: var(--primary); font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 20px; font-weight: 800; }
+.notifList { display: flex; flex-direction: column; max-height: 300px; overflow-y: auto; }
+.notifItem { display: flex; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); cursor: pointer; transition: 0.2s; }
+.notifItem:hover { background: var(--bg); }
+.notifItem:last-child { border-bottom: none; }
+.notifIcon { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; }
+.notifText { font-size: 0.85rem; color: var(--text); line-height: 1.3; margin-bottom: 0.2rem; }
+.notifText strong { color: var(--text); font-weight: 700; }
+.notifTime { font-size: 0.75rem; color: var(--text-muted); }
+.notifDot { position: absolute; top: 10px; right: 12px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; border: 2px solid var(--bg-white); }
+
+.dropdownMenuProfile { position: absolute; bottom: 70px; left: 0; right: 0; background: var(--bg-white); border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 -10px 25px -5px rgba(0,0,0,0.1); z-index: 1000; animation: dropUpFade 0.2s ease forwards; overflow: hidden; padding: 0.5rem; }
+.dropdownItem { display: flex; align-items: center; gap: 0.75rem; width: 100%; padding: 0.75rem 1rem; background: transparent; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; color: var(--text); cursor: pointer; transition: 0.2s; text-align: left; }
+.dropdownItem:hover { background: var(--bg); color: var(--primary); }
+.dropdownDivider { height: 1px; background: var(--border); margin: 0.5rem 0; }
+.dropdownItem.danger:hover { background: var(--danger-light); color: var(--danger); }
+
+@keyframes dropFade { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes dropUpFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- MOBILE RESPONSIVENESS (FIXED) --- */
+.hamburgerBtn { display: none; background: transparent; border: none; color: var(--text); cursor: pointer; padding: 0.5rem; margin-right: 0.5rem; }
+.closeMobileMenu { display: none; background: transparent; border: none; color: var(--text-muted); cursor: pointer; padding: 0.2rem; }
+.mobileOverlay { display: none; }
+
+@media (max-width: 900px) { 
+  .hamburgerBtn { display: block; }
+  .createBtnText { display: none; }
+  .createBtn { padding: 0.6rem; border-radius: 50%; }
+  .searchBar { display: none; }
+  
+  .mobileOverlay { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 999; backdrop-filter: blur(2px); }
+
+  .sidebar { 
+    left: -100%; 
+    width: 260px; 
+    box-shadow: 10px 0 25px rgba(0,0,0,0.1);
+  }
+
+  .sidebar.mobileOpen { 
+    left: 0; 
+  }
+
+  .closeMobileMenu { display: block; }
+  .mainWrapper { margin-left: 0; } 
+  .topHeader { padding: 1rem; }
+  .main { padding: 1.5rem 1rem; } 
+}
+
+/* --- PRINT STYLES --- */
+@media print {
+  .sidebar, .topHeader, .fab, .mobileOverlay { display: none !important; }
+  .mainWrapper { margin-left: 0 !important; }
+  .main { padding: 0 !important; margin: 0 !important; }
+}

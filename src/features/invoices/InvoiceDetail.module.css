@@ -1,0 +1,27 @@
+.back { display: inline-flex; align-items: center; gap: .4rem; background: transparent; border: none; color: var(--text-muted); font-size: .9rem; margin-bottom: 1rem; cursor: pointer; }
+.back:hover { color: var(--text); }
+.toolbar { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+.title { font-size: 1.6rem; font-weight: 800; letter-spacing: -.5px; margin-bottom: .35rem; }
+.sub { color: var(--text-muted); font-size: .9rem; }
+.actions { display: flex; gap: .5rem; flex-wrap: wrap; }
+.paper { background: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; max-width: 900px; }
+.paperHeader { display: flex; justify-content: space-between; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+.logo { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+.logoSub { color: var(--text-muted); font-size: .9rem; margin-top: .25rem; }
+.metaBlock { display: flex; flex-direction: column; gap: .35rem; }
+.metaRow { display: flex; gap: 1rem; justify-content: space-between; min-width: 220px; font-size: .9rem; }
+.metaRow span { color: var(--text-muted); }
+.parties { margin-bottom: 2rem; }
+.partyLabel { font-size: .75rem; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); font-weight: 600; margin-bottom: .35rem; }
+.partyName { font-size: 1.05rem; font-weight: 700; margin-bottom: .15rem; }
+.partyLine { color: var(--text-muted); font-size: .9rem; }
+.items { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+.items th { text-align: left; padding: .75rem .5rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); font-weight: 600; border-bottom: 2px solid var(--border); }
+.items td { padding: .85rem .5rem; border-bottom: 1px solid var(--border); font-size: .92rem; }
+.totals { display: flex; flex-direction: column; gap: .5rem; max-width: 320px; margin-left: auto; }
+.totalRow { display: flex; justify-content: space-between; font-size: .92rem; }
+.grandTotal { font-size: 1.15rem; font-weight: 700; padding-top: .5rem; border-top: 2px solid var(--border); }
+.notes { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: .9rem; }
+@media print { .back, .toolbar { display: none; } .paper { border: none; padding: 0; max-width: 100%; } }
+
+
